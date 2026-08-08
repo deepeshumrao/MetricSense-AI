@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metricsense-ai"
+version = "0.1.0"
+description = "Excel and CSV metric anomaly detection toolkit with CLI, Streamlit app, and email reporting."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Deepesh Umrao" }
+]
+keywords = ["anomaly-detection", "excel", "csv", "metrics", "streamlit"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Office/Business :: Financial :: Spreadsheet",
+  "Topic :: Scientific/Engineering :: Information Analysis"
+]
+dependencies = []
+
+[project.optional-dependencies]
+excel = ["openpyxl>=3.1"]
+app = ["streamlit>=1.30"]
+test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/deepeshumrao/MetricSense-AI"
+Repository = "https://github.com/deepeshumrao/MetricSense-AI"
+Issues = "https://github.com/deepeshumrao/MetricSense-AI/issues"
+
+[project.scripts]
+metricsense = "metricsense_ai.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["metricsense_ai*"]
